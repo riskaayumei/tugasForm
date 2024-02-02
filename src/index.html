@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Form</title>
+</head>
+<style>
+   body { font-family: Arial, Helvetica, sans-serif;}
+   form { width: 400px; margin:auto; padding: 40px;background-color: rgb(80, 197, 201); border-radius: 5px; }
+   form input[type=text],
+   form input[type=email],
+   form textarea { width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; box-sizing: border-box; border-radius: 20px; }
+   form input[type=submit] { background-color: #3dd942;  color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer;  width: 100%; }
+   form input[type=submit]:hover { opacity: 0.8; }
+   .h2 { text-align:justify ; margin: 140px; }
+   .popup { display: flex; align-items: center; justify-content: center; position: fixed; top: 0; left: 0;  width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5);}
+   .popup-content { background-color: white; padding: 20px; border-radius: 8px; text-align: center;}
+   .alert { padding: 20px; background-color: #f44336; color: white; margin-bottom: 15px;}
+   .alertsuccess {padding: 20px; background-color: #4CAF50; color: white; margin-bottom: 15px;}
+   .close-button { background-color: #00de07; color: white; padding: 10px 15px; border: none; cursor: pointer; border-radius: 4px; margin-top: 10px; }
+
+.close-button:hover {
+  opacity: 0.8;
+}
+
+</style>
+
+<body>
+
+   <form id="contactForm">
+      <h2>FORM </h2>
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" required><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="pesan">Pesan:</label>
+      <textarea id="pesan" name="pesan" rows="4" required></textarea><br>
+
+      <label for="pertanyaan">Apakah Anda Sudah Yakin?</label>
+      <input type="checkbox" name="pertanyaan" id="pertanyaan" required><br>
+
+      <input type="submit" value="Submit">
+   </form>
+
+   <div id="Ucapan" class="popup" style="display: none;">
+      <p class="popup-content">Form Berhasil Terkirim, Terimakasih <span id="namaUcapan"></span>!</p>
+      <h3><button class="close-button" onclick="closePopup()">Tutup</button></h3><br>
+   </div>
+
+   <script src="index.js"></script>
+
+</body>
+</html>
